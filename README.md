@@ -21,14 +21,14 @@ We've provided for you a basic Fasta and Fastq parser (written out in the parse.
 
 ## Software Development Assessment 
 - [ ] Create a pip installable tool (only locally, do not submit to PyPI)
-	- [ ] Edit the `pyproject.toml` file to reflect author information
-	- [ ] Update the dependencies to include those that you use in your code
+	- X Edit the `pyproject.toml` file to reflect author information
+	- X Update the dependencies to include those that you use in your code
 
 - [  ] Write a unit test (in the test.py file) for
 	- [ ] Fasta Parser
 	- [ ] Fastq Parser
-	- [ ] Transcription
-	- [ ] Reverse Transcription
+	- X Transcription
+	- X Reverse Transcription
 
 - [ ] Automate Testing with a [Github Actions](https://docs.github.com/en/actions)
 

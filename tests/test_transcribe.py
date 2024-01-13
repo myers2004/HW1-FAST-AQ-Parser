@@ -32,8 +32,7 @@ def test_transcribe():
 
     #testing a DNA sequence with allowed nucleotides
     test_seq_error = 'ACYGAACCC'
-    test_error_out = 'A non-allowed nucleotide is present in the sequence.'
-    assert transcribe(test_seq_error) == test_error_out
+    assert transcribe(test_seq_error) == None
     
     #testing an empty sequence
     assert transcribe('') == ''
@@ -46,12 +45,11 @@ def test_reverse_transcribe():
     #testing a DNA sequence with allowed nucleotides
     test_seq = 'ACTGAACCC'
     test_out = 'GGGUUCAGU'
-    assert transcribe(test_seq) == test_out
+    assert reverse_transcribe(test_seq) == test_out
 
     #testing a DNA sequence with allowed nucleotides
     test_seq_error = 'ACYGAACCC'
-    test_error_out = 'A non-allowed nucleotide is present in the sequence.'
-    assert transcribe(test_seq_error) == test_error_out
+    assert reverse_transcribe(test_seq_error) == None
     
     #testing an empty sequence
     assert transcribe('') == ''

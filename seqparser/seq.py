@@ -16,7 +16,7 @@ def transcribe(seq: str, reverse: bool = False) -> str:
             transcribed += TRANSCRIPTION_MAPPING[base]
         else:
             print('A non-allowed nucleotide is present in the sequence.')
-            return
+            return #return nothing if an incorrect nucleotide is present
     return transcribed
 
 def reverse_transcribe(seq: str) -> str:

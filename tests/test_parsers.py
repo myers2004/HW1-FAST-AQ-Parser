@@ -33,7 +33,23 @@ def test_FastaParser():
     files that are blank or corrupted in some way. Two example Fasta files are
     provided in /tests/bad.fa and /tests/empty.fa
     """
-    pass
+    #test a blank fasta file
+    blankfasta = FastaParser('tests/blank.fa')
+    with pytest.raises(ValueError):
+        for seq in blankfasta:
+            pass
+    
+    #test a bad fasta file
+    badfasta = FastaParser('tests/bad.fa')
+    with pytest.raises(ValueError):
+        for seq in badfasta:
+            pass
+    
+    #test the good fasta file
+    test_fasta = FastaParser('data/test.fa')
+    for seq in test_fasta:
+        assert seq[0].startswith('seq')
+
 
 
 def test_FastaFormat():
@@ -41,7 +57,14 @@ def test_FastaFormat():
     Test to make sure that a fasta file is being read in if a fastq file is
     read, the first item is None
     """
-    pass
+    fastq_data = FastaParser('data/test.fq')
+    for seq in fastq_data:
+        assert seq[0] == None
+        break
+    fasta_data = FastaParser('data/test.fa')
+    for seq in fasta_data:
+        assert seq[0] != None
+        break
 
 
 def test_FastqParser():
@@ -50,11 +73,20 @@ def test_FastqParser():
     an instance of your FastqParser class and assert that it properly reads 
     in the example Fastq File.
     """
-    pass
+    test_fastq = FastqParser('data/test.fq')
+    for seq in test_fastq:
+        assert seq[0].startswith('seq')
 
 def test_FastqFormat():
     """
     Test to make sure fastq file is being read in. If this is a fasta file, the
     first line is None
     """
-    pass
+    fastq_data = FastqParser('data/test.fq')
+    for seq in fastq_data:
+        assert seq[0] != None
+        break
+    fasta_data = FastqParser('data/test.fa')
+    for seq in fasta_data:
+        assert seq[0] == None
+        break

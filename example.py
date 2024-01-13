@@ -17,6 +17,7 @@ def main():
     # and print it to console
     for seq in fastaData:
        print(transcribe(seq[1]))
+
        
     # For each record of FastqParser, Transcribe the sequence
     # and print it to console
@@ -32,7 +33,7 @@ def main():
     # For each record of FastqParser, Reverse Transcribe the sequence
     # and print it to console
     for seq in fastqData:
-        print(reverse_transcribe(seq[1]))
+       print(reverse_transcribe(seq[1]))
 
 
 """

@@ -48,7 +48,10 @@ def test_FastaParser():
     #test the good fasta file
     test_fasta = FastaParser('data/test.fa')
     for seq in test_fasta:
+        assert type(seq[0]) == str
         assert seq[0].startswith('seq')
+        assert 'A' in seq[1] or 'G' in seq[1] or 'C' in seq[1] or 'T' in seq[1]
+        assert type(seq[1]) == str 
 
 
 
@@ -75,7 +78,10 @@ def test_FastqParser():
     """
     test_fastq = FastqParser('data/test.fq')
     for seq in test_fastq:
+        assert type(seq[0]) == str
         assert seq[0].startswith('seq')
+        assert 'A' in seq[1] or 'G' in seq[1] or 'C' in seq[1] or 'T' in seq[1]
+        assert type(seq[1]) == str
 
 def test_FastqFormat():
     """

@@ -30,7 +30,7 @@ def test_transcribe():
     test_out = 'UGACUUGGG'
     assert transcribe(test_seq) == test_out
 
-    #testing a DNA sequence with allowed nucleotides
+    #testing a DNA sequence with un-allowed nucleotides
     test_seq_error = 'ACYGAACCC'
     assert transcribe(test_seq_error) == None
     
@@ -47,7 +47,7 @@ def test_reverse_transcribe():
     test_out = 'GGGUUCAGU'
     assert reverse_transcribe(test_seq) == test_out
 
-    #testing a DNA sequence with allowed nucleotides
+    #testing a DNA sequence with un-allowed nucleotides
     test_seq_error = 'ACYGAACCC'
     assert reverse_transcribe(test_seq_error) == None
     

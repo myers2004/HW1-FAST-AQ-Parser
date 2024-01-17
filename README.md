@@ -24,13 +24,13 @@ We've provided for you a basic Fasta and Fastq parser (written out in the parse.
 	- X Edit the `pyproject.toml` file to reflect author information
 	- X Update the dependencies to include those that you use in your code
 
-- X? Write a unit test (in the test.py file) for
-	- X? Fasta Parser
-	- X? Fastq Parser
+- X Write a unit test (in the test.py file) for
+	- X Fasta Parser
+	- X Fastq Parser
 	- X Transcription
 	- X Reverse Transcription
 
-- X? Automate Testing with a [Github Actions](https://docs.github.com/en/actions)
+- X Automate Testing with a [Github Actions](https://docs.github.com/en/actions)
 
 	See blogposts below on helping set up github actions with pytest:
 	
@@ -43,7 +43,7 @@ We've provided for you a basic Fasta and Fastq parser (written out in the parse.
 	
 	You can also reference the [Minimal-Example](https://github.com/bmi203-2023/Minimal-Example).
 
-![](https://github.com/hchen725/HW1-FAST-AQ-Parser/workflows/Project%20Tests/badge.svg)
+[![Project Tests](https://github.com/myers2004/HW1-FAST-AQ-Parser/actions/workflows/ci.yml/badge.svg)](https://github.com/myers2004/HW1-FAST-AQ-Parser/actions/workflows/ci.yml)
 
 # Getting Started
 To get started you will need to fork this repository onto your own github. You will then work on the code base from your own repo and make changes to it in the form of commits. 

@@ -12,11 +12,12 @@ def transcribe(seq: str, reverse: bool = False) -> str:
     """
     transcribed = '' #To be filled in with the transcibed sequence
     for base in seq:
+        # Test if a given base is allowed, and add its pair to transcribed if so
         if base in ALLOWED_NUC:
             transcribed += TRANSCRIPTION_MAPPING[base]
         else:
-            print('A non-allowed nucleotide is present in the sequence.')
-            return #return nothing if an incorrect nucleotide is present
+            #if base not in allowed nucleotide, report the base and raise value error
+            raise ValueError('Non-allowed nucleotide \'' + base + '\' encountered.')
     return transcribed
 
 def reverse_transcribe(seq: str) -> str:
@@ -29,7 +30,6 @@ def reverse_transcribe(seq: str) -> str:
         if base in ALLOWED_NUC:
             transcribed += TRANSCRIPTION_MAPPING[base]
         else:
-            print('A non-allowed nucleotide is present in the sequence.')
-            return
+            raise ValueError('Non-allowed nucleotide \'' + base + '\' encountered.')
     #Now we return the reverse of the transcribed sequence
     return transcribed[::-1]

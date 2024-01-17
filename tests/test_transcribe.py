@@ -4,6 +4,7 @@ from seqparser import (
         transcribe,
         reverse_transcribe)
 
+import pytest
 
 def test_freebie_transcribe_1():
     """
@@ -32,7 +33,8 @@ def test_transcribe():
 
     #testing a DNA sequence with un-allowed nucleotides
     test_seq_error = 'ACYGAACCC'
-    assert transcribe(test_seq_error) == None
+    with pytest.raises(ValueError):
+        transcribe(test_seq_error)
     
     #testing an empty sequence
     assert transcribe('') == ''
@@ -49,7 +51,8 @@ def test_reverse_transcribe():
 
     #testing a DNA sequence with un-allowed nucleotides
     test_seq_error = 'ACYGAACCC'
-    assert reverse_transcribe(test_seq_error) == None
+    with pytest.raises(ValueError):
+        reverse_transcribe(test_seq_error)
     
     #testing an empty sequence
-    assert transcribe('') == ''
+    assert reverse_transcribe('') == ''

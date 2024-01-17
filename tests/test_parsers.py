@@ -76,6 +76,18 @@ def test_FastqParser():
     an instance of your FastqParser class and assert that it properly reads 
     in the example Fastq File.
     """
+    #test a blank fastq file
+    blankfastq = FastqParser('tests/blank.fq')
+    with pytest.raises(ValueError):
+        for seq in blankfastq:
+            pass
+    
+    #test a bad fastq file
+    badfastq = FastqParser('tests/bad.fq')
+    with pytest.raises(ValueError):
+        for seq in badfastq:
+            pass
+    
     test_fastq = FastqParser('data/test.fq')
     for seq in test_fastq:
         assert type(seq[0]) == str

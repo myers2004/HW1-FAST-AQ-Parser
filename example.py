@@ -16,24 +16,24 @@ def main():
     # For each record of FastaParser, Transcribe the sequence
     # and print it to console
     for seq in fastaData:
-       print(transcribe(seq[1]))
+       print(seq[0] + '\n' + transcribe(seq[1]) + '\n')
 
        
     # For each record of FastqParser, Transcribe the sequence
     # and print it to console
     for seq in fastqData:
-        print(transcribe(seq[1]))
+        print(seq[0] + '\n' + transcribe(seq[1]) + '\n')
 
 
     # For each record of FastaParser, Reverse Transcribe the sequence
     # and print it to console
     for seq in fastaData:
-       print(reverse_transcribe(seq[1]))
+       print(seq[0] + '\n' + reverse_transcribe(seq[1]) + '\n')
        
     # For each record of FastqParser, Reverse Transcribe the sequence
     # and print it to console
     for seq in fastqData:
-       print(reverse_transcribe(seq[1]))
+       print(seq[0] + '\n' + reverse_transcribe(seq[1]) + '\n')
 
 
 """
